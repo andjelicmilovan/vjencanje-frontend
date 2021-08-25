@@ -1,0 +1,308 @@
+<app-navbar></app-navbar>
+
+<div class = "row">
+<form [formGroup] = "unos">
+  <div class = "column" style="width:33%; float:left;padding: 10px">
+  <b>Informacije</b>
+  <div class="form-row">
+    <div >
+      <label for="inputEmail4">Maticni registar vjencanih</label>
+      <input type="text" class="form-control" formControlName="maticni_registar_vjencanih" >
+    </div>
+    <div >
+      <label >Tekuci broj</label>
+      <input type="text" class="form-control" formControlName="tekuci_broj">
+    </div>
+    <div >
+      <label >Redni broj strane</label>
+      <input type="text" class="form-control" formControlName="redni_broj_strane">
+    </div>
+    <div >
+      <label for="inputPassword4">Referent:</label><br>
+     <b> {{ user?.ime + " " + user?.prezime }}</b>
+    </div>
+    <div >
+      <label for="inputPassword4">Datum</label>
+      <input class="form-control" type="date" required formControlName="datum_vjencanja">
+    </div>
+    <div >
+      <label for="inputPassword4">Mjesto vjencanje</label>
+      <input type="text" class="form-control" formControlName="mjesto_vjencanja">
+    </div>
+    <div >
+      <label >Interni broj</label>
+      <input type="text" class="form-control" formControlName="interni_broj">
+    </div>
+  </div>
+
+  <b>Informacije o mladom:</b>
+  <div class="form-row" >
+    <div >
+      <label for="inputEmail4">Ime</label>
+      <input type="email" class="form-control"  formControlName="ime_mladozenje">
+    </div>
+    <div >
+      <label >Prezime</label>
+      <input type="text" class="form-control"  formControlName="prezime_mladozenje" >
+    </div>
+    <div >
+      <label >Novo prezime</label>
+      <input type="text" class="form-control"  formControlName="novo_prezime_mladozenje" >
+    </div>
+    <div >
+      <label >Jmbg</label>
+      <input type="text" class="form-control" formControlName="jmbg_mladozenje"  >
+    </div>
+    <div >
+      <label >Pol</label>
+      <input type="text" class="form-control"  formControlName="pol_mladozenje" >
+    </div>
+    <div >
+      <label for="inputPassword4">Datum rodjenja</label>
+      <input class="form-control" type="date" required formControlName="datum_rodjenja_mladozenje">
+    </div>
+    <div >
+      <label >Nepotpuni datum rodjenja(dan)</label>
+      <input type="text" class="form-control" formControlName="nepotpuni_datum_rodjenja_mladozenje_dan"  >
+    </div>
+    <div >
+      <label >Nepotpuni datum rodjenja(mjesec)</label>
+      <input type="text" class="form-control" formControlName="nepotpuni_datum_rodjenja_mladozenje_mjesec" >
+    </div>
+    <div >
+      <label >Nepotpuni datum rodjenja(godina)</label>
+      <input type="text" class="form-control" formControlName="nepotpuni_datum_rodjenja_mladozenje_godina"  >
+    </div>
+    <div >
+      <label for="inputPassword4">Mjesto rodjenja</label>
+      <input type="text" class="form-control" formControlName="mjesto_rodjenja_mladozenje" >
+    </div>
+    <div >
+      <label >Opstina rodjenja</label>
+      <input type="text" class="form-control"  formControlName="opstina_rodjenja_mladozenje" >
+    </div>
+    <div >
+      <label >Drzava rodjenja</label>
+      <input type="text" class="form-control"  formControlName="drzava_rodjenja_mladozenje" >
+    </div>
+    <div >
+      <label >Drzavljanstvo</label>
+      <input type="text" class="form-control"  formControlName="drzavljanstvo_mladozenje" >
+    </div>
+    <div >
+      <label >Mjesto prebivalista</label>
+      <input type="text" class="form-control"  formControlName="mjesto_prebivalista_mladozenje" >
+    </div>
+    <div >
+      <label >Ulica prebivalista prebivalista</label>
+      <input type="text" class="form-control"  formControlName="ulica_prebivalista_mladozenje" >
+    </div>
+    <div >
+      <label >Broj ulice prebivalista</label>
+      <input type="text" class="form-control"  formControlName="broj_ulice_prebivalista_mladozenje" >
+    </div>
+    <div >
+      <label >Ime oca</label>
+      <input type="text" class="form-control" formControlName="ime_oca_mladozenje"  >
+    </div>
+    <!-- <div class="form-group col-md-3">
+      <label for="inputPassword4">Prezime oca</label>
+      <input type="password" class="form-control"  formControlName="prezime_oca_mladozenje" >
+    </div> -->
+    <div >
+      <label >Ime majke</label>
+      <input type="text" class="form-control"  formControlName="ime_majke_mladozenje" >
+    </div>
+    <!-- <div class="form-group col-md-3">
+      <label for="inputPassword4">Prezime majke</label>
+      <input type="password" class="form-control" formControlName="prezime_majke_mladozenje"  >
+    </div> -->
+    <div >
+      <label >Djevojacko prezime majke</label>
+      <input type="text" class="form-control" formControlName="prezime_rodjeno_majke_mladozenje"  >
+    </div>
+
+  </div>
+</div>
+<div class = "column" style="width:33%; float:left;padding: 10px">
+ <b> Informacije o mladoj:</b><br>
+
+      <label for="inputEmail4">Ime mlade</label>
+      <input type="email" class="form-control" id="inputEmail4"  formControlName="ime_nevjeste">
+
+
+      <label >Prezime </label>
+      <input type="text" class="form-control" formControlName="prezime_nevjeste"  >
+
+
+      <label >Novo prezime </label>
+      <input type="text" class="form-control" formControlName="novo_prezime_nevjeste"  >
+
+
+      <label >Jmbg </label>
+      <input type="text" class="form-control"  formControlName="jmbg_nevjeste" >
+
+
+      <label >Pol </label>
+      <input type="text" class="form-control"  formControlName="pol_nevjeste" >
+
+
+      <label for="inputPassword4">Datum rodjenja</label>
+      <input class="form-control" type="date" required formControlName="datum_rodjenja_nevjeste">
+
+
+      <label >Nepotpuni datum rodjenja(dan)</label>
+      <input type="text" class="form-control"  formControlName="nepotpuni_datum_rodjenja_nevjeste_dan" >
+
+
+      <label >Nepotpuni datum rodjenja(mjesec)</label>
+      <input type="text" class="form-control"  formControlName="nepotpuni_datum_rodjenja_nevjeste_mjesec" >
+
+
+      <label >Nepotpuni datum rodjenja(godina)</label>
+      <input type="text" class="form-control"  formControlName="nepotpuni_datum_rodjenja_nevjeste_godina" >
+
+
+      <label >Mjesto rodjenja</label>
+      <input type="text" class="form-control" formControlName="mjesto_rodjenja_nevjeste">
+
+
+      <label >Opstina rodjenja</label>
+      <input type="text" class="form-control"  formControlName="opstina_rodjenja_nevjeste" >
+
+
+      <label >Drzava rodjenja</label>
+      <input type="text" class="form-control"  formControlName="drzava_rodjenja_nevjeste" >
+
+
+      <label >Drzavljanstvo</label>
+      <input type="text" class="form-control"  formControlName="drzavljanstvo_nevjeste" >
+
+
+      <label >Mjesto prebivalista</label>
+      <input type="text" class="form-control"  formControlName="mjesto_prebivalista_nevjeste" >
+
+
+      <label >Ulica prebivalista prebivalista</label>
+      <input type="text" class="form-control"  formControlName="ulica_prebivalista_nevjeste">
+
+
+      <label >Broj ulice prebivalista</label>
+      <input type="text" class="form-control"  formControlName="broj_ulice_prebivalista_nevjeste" >
+
+
+      <label >Ime oca</label>
+      <input type="text" class="form-control" formControlName="ime_oca_nevjeste" >
+
+    <!-- <div class="form-group col-md-3">
+      <label for="inputPassword4">Prezime oca</label>
+      <input type="password" class="form-control" formControlName="prezime_oca_nevjeste" >
+    </div> -->
+
+      <label >Ime majke</label>
+      <input type="text" class="form-control" formControlName="ime_majke_nevjeste" >
+
+    <!-- <div class="form-group col-md-3">
+      <label for="inputPassword4">Prezime majke</label>
+      <input type="password" class="form-control" formControlName="prezime_majke_nevjeste" >
+    </div> -->
+
+      <label >Djevojacko prezime majke</label>
+      <input type="text" class="form-control" formControlName="prezime_rodjeno_majke_nevjeste" >
+
+  </div>
+  <div class="column" style="width: 33%;float:left;padding: 10px">
+    <b>Kumovi</b><br>
+
+      <label for="inputPassword4">Ime prvog svjedoka</label>
+      <input type="text" class="form-control" formControlName="ime_prvog_svjedoka" >
+
+
+      <label for="inputPassword4">Prezime prvog svjedoka</label>
+      <input type="text" class="form-control" formControlName="prezime_prvog_svjedoka" >
+
+
+      <label for="inputPassword4">Mjesto prebivalista prvog svjedoka</label>
+      <input type="text" class="form-control" formControlName="mjesto_prebivalista_prvog_svjedoka" >
+
+
+      <label for="inputPassword4">Ulica prebivalista prvog svjedoka</label>
+      <input type="text" class="form-control" formControlName="ulica_prebivalista_prvog_svjedoka" >
+
+
+      <label for="inputPassword4">broj ulice</label>
+      <input type="text" class="form-control" formControlName="broj_ulice_prvog_svjedoka" >
+
+
+      <label for="inputPassword4">Ime drugog svjedoka</label>
+      <input type="text" class="form-control" formControlName="ime_drugog_svjedoka" >
+
+
+      <label for="inputPassword4">Prezime drugog svjedoka</label>
+      <input type="text" class="form-control" formControlName="prezime_drugog_svjedoka" >
+
+
+      <label for="inputPassword4">Mjesto prebivalista drugog svjedoka</label>
+      <input type="text" class="form-control" formControlName="mjesto_prebivalista_drugog_svjedoka" >
+
+
+      <label for="inputPassword4">Ulica prebivalista drugog svjedoka</label>
+      <input type="text" class="form-control" formControlName="ulica_prebivalista_drugog_svjedoka" >
+
+
+      <label for="inputPassword4">broj ulice</label>
+      <input type="text" class="form-control" formControlName="broj_ulice_drugog_svjedoka" >
+
+    <b>Opstina podaci:</b><br>
+      <label for="inputPassword4">Odbornik</label>
+      <select class="form-select" aria-label="Default select example" formControlName="odbornik">
+        <option *ngFor="let o of odbornici" [value]="o.id">
+          {{ o.ime + " " + o.prezime }}
+        </option>
+      </select>
+
+
+
+      <label for="inputPassword4">Maticar</label>
+      <select class="form-select" aria-label="Default select example" formControlName="maticar">
+        <option *ngFor = "let p of maticari" [value]="p.id">{{ p.ime + " " + p.prezime }}</option>
+
+      </select>
+
+
+
+      <label for="inputPassword4">Izjava prezimena</label>
+      <input type="text" class="form-control" formControlName="izjava_prezimena" >
+
+      <label for="inputPassword4">Naknadni upisi</label>
+      <input type="text" class="form-control" formControlName="naknadni_upisi" >
+
+
+      <label for="inputPassword4">Dokumenta:</label>
+
+        <div *ngFor="let d of dokumenta" formControlName ="dokument">
+        <input type="checkbox" class="custom-control-input" id="customControlValidation1" [value]= "d.id" [name]="d.id" [id]="d.id" (change)="dodajDokument($event)">
+        <label class="custom-control-label" for="customControlValidation1"  >{{ d?.dokument }}</label>
+
+      <!-- <div *ngFor="let d of dokumenta" formControlName ="dokumenta" >
+          <li [value]= "d.id">
+            {{ d.dokument }}
+            <button *ngIf="dodatDokument==0" class="btn btn-primary btn-sm" (click)="dodajPivot()">
+              Dodaj
+            </button>
+            <button *ngIf="dodatDokument==1" class="btn btn-secondary btn-sm" (click)="obrisiPivot()">
+              Ukloni
+            </button>
+
+          </li>
+      </div> -->
+
+    </div>
+
+</div>
+  <button type="submit" class="btn btn-primary" (click)="submit()">Dodaj</button>
+
+</form>
+</div>
+
+

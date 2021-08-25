@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light" >
+  <form class="form-inline" >
+    <button class="btn btn-outline-success" type="button"  routerLink="../pretrazi">Pretrazi</button>
+    <button class="btn btn-outline-success" type="button"  routerLink="../dodaj" >Dodaj novi par</button>
+    <button class="btn btn-outline-success" type="button"  routerLink="../rezervacije" >Rezervacije</button>
+    <button class="btn btn-outline-success" type="button" [hidden]="role!=1" routerLink="../maticar">Maticar</button>
+    <button class="btn btn-outline-success" type="button" [hidden]="role!=1"  routerLink="../odbornik">Odbornik</button>
+    <button class="btn btn-outline-success" type="button"  routerLink="../login" (click)="logout()">Odjavi se</button>
+
+
+  </form>
+</nav>

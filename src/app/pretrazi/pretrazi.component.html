@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+Pretrazi po:
+<div class="form-check">
+  <input class="form-check-input" type="radio" [(ngModel)]="pretragaPoPolu" name="musko" value ="0" checked >
+  <label class="form-check-label" for="flexRadioDefault1">
+    Suprugu
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio"  [(ngModel)]="pretragaPoPolu" name="zensko" value = "1">
+  <label class="form-check-label" for="flexRadioDefault2">
+    Supruzi
+  </label>
+</div>
+
+
+
+<div *ngIf= "pretragaPoPolu == 0">
+  <b>Informacije</b>
+  <form class="form-row" [formGroup] = "pretragaSuprug">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Ime</label>
+      <input type="email" class="form-control" formControlName="ime_mladozenje" >
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">Prezime</label>
+      <input type="text" class="form-control" formControlName="prezime_mladozenje">
+    </div>
+    <!-- <div class="form-group col-md-3">
+      <label for="inputPassword4">Ime oca</label>
+      <input type="text" class="form-control" formControlName="ime_oca_mladozenje">
+    </div> -->
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">Jmbg</label>
+      <input type="text" class="form-control" formControlName="jmbg_mladozenje">
+    </div>
+    <button type="submit" class ="btn btn-primary" (click)="pretragaSuprugKlik()">Pretrazi</button>
+  </form>
+</div>
+
+
+
+  <div *ngIf= "pretragaPoPolu == 1">
+
+      <b>Informacije</b>
+      <form class="form-row" [formGroup] = "pretragaSupruga">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Ime</label>
+          <input type="email" class="form-control" formControlName="ime_nevjeste" >
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputPassword4">Prezime</label>
+          <input type="text" class="form-control" formControlName="prezime_nevjeste">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="inputPassword4">Jmbg</label>
+          <input type="text" class="form-control" formControlName="jmbg_nevjeste">
+        </div>
+        <button type="submit" class ="btn btn-primary" (click)="pretragaSuprugaKlik()">Pretrazi</button>
+      </form>
+      </div>
+
+
+<div *ngIf="pretrazen==1">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ime supruga</th>
+            <th scope="col">Prezime supruga</th>
+            <th scope="col">Ime supruge</th>
+            <th scope="col">Prezime supruge</th>
+            <th scope="col">Datum vjencanja</th>
+            <th scope="col">Izmijeni</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let l of pretragaSuprugRes">
+            <th scope="row">{{ l.id }}</th>
+            <td>{{ l.ime_mladozenje }}</td>
+            <td>{{ l.prezime_mladozenje }}</td>
+            <td>{{ l.ime_nevjeste }}</td>
+            <td>{{ l.prezime_nevjeste }}</td>
+            <td>{{ l.datum_vjencanja }}</td>
+            <td><button class="btn btn-primary" routerLink="./{{ l.id }}" >Izvjestaj</button></td>
+            <td><button class="btn btn-primary" routerLink="../medjunarodni/{{ l.id }}">Medjunarodni izvjestaj</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+

@@ -1,0 +1,331 @@
+<!-- <p>U matičnom registru vjenčanih koji se vodi za mjesto -  ysgdubivhsduo, pod rednim brojem FGHJK, za godinu FGHJK, izvrsen je upis zakljucenja braka:</p>
+
+
+<div  id="racun1" >
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" colspan="3">Opstina</th>
+      <th scope="col" colspan="6">Tuzi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3">Dan, mjesec, godina zakljucivanja braka</td>
+      <td colspan="6">{{ rezultat[0].datum_vjencanja }}</td>
+    </tr>
+    <tr>
+      <td colspan = "3" rowspan="2">Ime</td>
+      <td colspan ="3" rowspan="1">Suprug</td>
+      <td colspan= "3" rowspan="1">Supruga</td>
+    </tr>
+    <tr>
+      <td colspan="3" rowspan = "1">{{ rezultat[0].ime_mladozenje }}</td>
+      <td colspan ="3" rowspan = "1">{{ rezultat[0].ime_nevjeste }}</td>
+    </tr>
+    <tr>
+      <td colspan="3">Prezime</td>
+      <td colspan="3">{{ rezultat[0].prezime_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].prezime_nevjeste }}</td>
+    </tr>
+    <tr>
+      <td colspan="3">Jedinstveni maticni broj</td>
+      <td colspan="3">{{ rezultat[0].jmbg_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].jmbg_nevjeste }}</td>
+
+    </tr>
+    <tr>
+      <td colspan="3">Dan, mjesec, godina rodjenja</td>
+      <td colspan="3">{{ rezultat[0].datum_rodjenja_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].datum_rodjenja_nevjeste }}</td>
+
+    </tr>
+    <tr>
+      <td colspan="3">Mjesto i opstina rodjenja i drzava</td>
+      <td colspan="3">{{ rezultat[0].drzava_rodjenja_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].drzava_rodjenja_nevjeste }}</td>
+    </tr>
+    <tr>
+
+      <td colspan="3">Drzavljanstvo</td>
+      <td colspan="3">{{ rezultat[0].drzavljanstvo_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].drzavljanstvo_nevjeste }}</td>
+    </tr>
+    <tr>
+
+      <td colspan="3">Prebivaliste</td>
+      <td colspan="3">{{ rezultat[0].mjesto_prebivalista_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].mjesto_prebivalista_nevjeste }}</td>
+
+    </tr>
+    <tr>
+
+      <td colspan="2" rowspan="2">Ime i prezime roditelja</td>
+      <td>Otac</td>
+      <td colspan="3">{{ rezultat[0].ime_oca_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].ime_oca_nevjeste }}</td>
+
+    </tr>
+    <tr>
+      <td>Majka</td>
+      <td colspan="3">{{ rezultat[0].ime_majke_mladozenje }}</td>
+      <td colspan="3">{{ rezultat[0].ime_majke_nevjeste }}</td>
+
+    </tr>
+    <tr>
+
+      <td colspan="3">Izjava supruznika o njihovim prezimenima</td>
+      <td colspan="6">{{ rezultat[0].izjava_prezimena }}</td>
+
+    </tr>
+    <tr>
+      <td colspan="9" rowspan="3">Naknadni upisi:<br>dasdasd</td>
+
+    </tr>
+
+  </tbody>
+</table>
+</div>
+<div> <button [hidden] = "dugme === 0"  (click)="openPDF()">Export To PDF</button></div> -->
+
+
+
+<div class="glavni"  style="font-size:14px; font-family:TimesNewRoman;POSITION:absolute;width:720px; TOP: 20px; left: 30px;">
+  <table border="0" bordercolor="#000000" style="background-color:#FFFFff;font-family:TimesNewRoman;" width="100%"
+         height="100%" cellpadding="2" cellspacing="2">
+<tr>
+
+<td style="padding-top:15px; padding-bottom:30px; font-family:TimesNewRoman;">
+  <div align=center style="line-height:160%; font-size:16px; font-family:TimesNewRoman;" >
+    <span
+      face="Times New Roman">CRNA GORA - MALI I ZI</span>
+  </div>
+<div  align=left
+      style="width:100%;MARGIN-LEFT:20px;MARGIN-TOP:15px;margin-bottom:20px;font-size:16px;font-family:TimesNewRoman;">
+  <span face="Times New Roman">OPŠTINA - KOMUNA______{{ rezultat[0].mjesto_vjencanja }}_____________________</span>
+
+</div>
+<div align=center style="width:100%;margin-bottom:20px; font-size:20px; font-family:TimesNewRoman;">
+  <span
+    face="Times New Roman"><B>IZVOD IZ MATIČNOG REGISTRA VJENČANIH<BR>EKSTRAKT NGA REGJISTRI I TË
+    MARTUARVE</B></span>
+</div>
+<div id="Layer7" align=justify
+     style="line-height:160%; position:relative; left:25px; top:20px; font-size:14px; font-family:TimesNewRoman;">
+  <span face="Times New Roman"> U matičnom registru vjenčanih koji se vodi za mjesto - Në Regjistrin e të
+    martuarve për komunën ___{{ rezultat[0].mjesto_vjencanja }}____________<br> pod rednim brojem - nën numrin rëndor _{{ rezultat[0].tekuci_broj }}_______ za godinu - për
+    vitin __{{ rezultat[0].datum_vjencanja | date: 'yyyy' }}________ izvršen je upis zaključenja braka<BR> - është regjistruar lidhja e martesës:</span>
+</div>
+<div id="Layer7" align=left style="position:relative; left:20px; top:20px; font-family:TimesNewRoman;">
+  <table border="1" style="border:solid 1px black;font-size:12px;font-family:TimesNewRoman;border-collapse:collapse; "
+  width="92%" cellpadding="4" cellspacing="0" >
+  <tr>
+    <td colspan="2"
+    style="font-size:12px;border:solid 1px black;padding-top:4px;padding-left:5px;padding-bottom:4px;">
+    <span face="Times New Roman"> Mjesto zaključenja braka<BR> Vendi lidhjes së
+      martesës>
+    </span></td>
+    <td colspan="2" align=center style="font-size:12px;border:solid 1px black;padding-top:2px; padding-bottom:2px;">
+       <b><span face="Times New Roman">{{ rezultat[0].mjesto_vjencanja }}</span></b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"
+    style="font-size:12px;padding-top:2px;border:solid 1px black; padding-bottom:2px;"><span
+        face="Times New Roman">Dan, mjesec i godina <br>zaključenja braka - Dita, muaji <br>dhe
+    viti i lidhjes së martesës</span>
+  </td>
+  <td colspan="2" align=center
+                                style="font-size:12px;border:solid 1px black;padding-top:2px; padding-bottom:2px;"><span
+                                    face="Times New Roman"><b>{{ rezultat[0].datum_vjencanja | date: 'dd-MM-yyyy'}} </b></span></td>
+
+
+  </tr>
+
+  <tr>
+    <td rowspan="2" colspan="2"
+                                style="font-size:12px;padding-top:5px; border:solid 1px black;padding-bottom:5px;"><span
+                                    face="Times New Roman">Ime - Emri</span></td>
+                            <td height="14px"
+                                style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;"
+                                align=middle><span face="Times New Roman"> SUPRUG<br>BASHKËSHORTI</span></td>
+                            <td height="14px"
+                                style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;"
+                                align=middle><span face="Times New Roman"> SUPRUGA<br>BASHKËSHORTJA</span></td>
+
+  </tr>
+  <tr>
+    <td height="75%"
+                                style=" padding-top:4px;border:solid 1px black; padding-bottom:4px;font-size:12px;">
+                                <b><span face="Times New Roman">{{ rezultat[0].ime_mladozenje }}</span> </b></td>
+                            <td height="75%"
+                                style=" padding-top:4px;border:solid 1px black; padding-bottom:4px;font-size:12px;">
+                                <b><span face="Times New Roman">{{ rezultat[0].ime_nevjeste }}</span> </b></td>
+  </tr>
+  <tr>
+    <td colspan="2"
+                                style=" padding-top:5px;border:solid 1px black; padding-bottom:5px;font-size:12px;">
+                                <span face="Times New Roman">Prezime - Mbiemri</span></td>
+                            <td height="25%"
+                                style=" padding-top:4px;border:solid 1px black; padding-bottom:4px;font-size:12px;">
+                                <span face="Times New Roman"><b> {{ rezultat[0].prezime_mladozenje }} </b></span></td>
+                            <td height="25%"
+                                style=" padding-top:4px;border:solid 1px black; padding-bottom:4px;font-size:12px;">
+                                <span face="Times New Roman"> <b>{{ rezultat[0].prezime_nevjeste }} </b></span></td>
+  </tr>
+  <tr>
+    <td colspan="2"
+    style="padding-top:2px;border:solid 1px black;padding-bottom:2px;font-size:12px;">
+    <span face="Times New Roman"> Jedinstveni matični broj<br> Numri personal</span></td>
+    <td height="15%" style="padding-top:0px;border:solid 1px black; padding-bottom:0px;">
+      <table border="1" bordercolor="#000000"
+             style="border:solid 1px black; font-size:11px;border-collapse:collapse; border-top-color:transparent;text-align:center;display:inline;"
+             width="95%" align=center cellspacing="0">
+          <tr align=center>
+              <th style="border-top-color:transparent;">{{ rezultat[0].jmbg_mladozenje }}</th>
+
+          </tr>
+      </table>
+  </td>
+  <td height="15%" style="padding-top:0px;border:solid 1px black;padding-bottom:0px;">
+    <table border="1" bordercolor="#000000"
+           style="border:solid 1px black; font-size:11px;border-collapse:collapse;border-right-color:solid 1px black; border-top-color:transparent;text-align:center;display:inline;"
+           width="95%" align=center cellspacing="0">
+        <tr align=center>
+            <th style="border-top-color:transparent;">{{ rezultat[0].jmbg_nevjeste }}</th>
+
+
+        </tr>
+    </table>
+</td>
+  </tr>
+<tr>
+  <td colspan="2"
+                                style=" padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;">
+                                <span face="Times New Roman"> Dan, mjesec i godina rođenja <b> Dita, muaji dhe viti i
+                                    lindjes</b></span></td>
+                            <td style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px; ">
+                                <span face="Times New Roman"> <b>{{ rezultat[0].datum_rodjenja_mladozenje | date: 'dd-MM-yyyy' }} </b></span></td>
+                            <td style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px; ">
+                                <span face="Times New Roman"> <b>{{ rezultat[0].datum_rodjenja_nevjeste | date: 'dd-MM-yyyy' }}</b></span></td>
+</tr>
+<tr>
+  <td colspan="2"
+                                style="padding-top:0px;border:solid 1px black; padding-bottom:0px;font-size:12px;"><span
+                                    face="Times New Roman"> Mjesto i opština/grad i država <br> rođenja - Vendi dhe
+                                komuna/<br> qyeteti dhe shteti i lindjes</span></td>
+                            <td style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;"><span
+                                    face="Times New Roman"> <b>{{ rezultat[0].opstina_rodjenja_mladozenje }}, {{ rezultat[0].drzava_rodjenja_mladozenje }} </b></span></td>
+                            <td style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;"><span
+                                    face="Times New Roman"> <b>{{ rezultat[0].opstina_rodjenja_nevjeste }}, {{ rezultat[0].drzava_rodjenja_nevjeste }} </b></span></td>
+</tr>
+<tr>
+  <td colspan="2"
+                                style="padding-top:5px;border:solid 1px black; padding-bottom:5px;font-size:12px;"><span
+                                    face="Times New Roman"> Državljanstvo - Shtetësia</span></td>
+                            <td style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;"><span
+                                    face="Times New Roman"> <b>{{ rezultat[0].drzavljanstvo_mladozenja }} </b></span></td>
+                            <td valign=center
+                                style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;"><span
+                                    face="Times New Roman"><b>{{ rezultat[0].drzavljanstvo_nevjesta }}</b></span></td>
+</tr>
+<tr>
+  <td colspan="2"
+      style="padding-top:2px; border:solid 1px black;padding-bottom:2px;font-size:12px;"><span
+          face="Times New Roman"> Prebivalište i adresa stana <BR> Vendi dhe adresa e banimit
+  </span></td>
+  <td style="padding-top:2px; padding-bottom:2px; font-size:12px; border:solid 1px black;">
+      <span face="Times New Roman"><b>{{ rezultat[0].mjesto_prebivalista_mladozenje }} </b></span></td>
+  <td valign=center
+      style="padding-top:2px; padding-bottom:2px; font-size:12px; border:solid 1px black;">
+      <span face="Times New Roman"><b>{{ rezultat[0].mjesto_prebivalista_nevjeste }} </b></span></td>
+</tr>
+<tr>
+  <td rowspan="2" height="100%"
+      style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px;"><span
+          face="Times New Roman"> Ime i prezime <br> roditelja supružnika<br> Emri dhe mbiemri
+      i<br> prindërve të<br> bashkëshortëve</span></td>
+  <td align=center valign=center height="50%"
+      style="padding-top:10px;border:solid 1px black; padding-bottom:8px; font-size:12px;">
+      <span face="Times New Roman"> Oca<br>Atësia</span></td>
+  <td style="padding-top:10px;border:solid 1px black; padding-bottom:8px; font-size:12px;">
+      <span face="Times New Roman"><b>{{ rezultat[0].ime_oca_mladozenje }} {{ rezultat[0].prezime_mladozenje }} </b></span></td>
+  <td style="padding-top:10px;border:solid 1px black; padding-bottom:8px; font-size:12px;">
+      <span face="Times New Roman"><b>{{ rezultat[0].ime_oca_nevjeste }} {{ rezultat[0].prezime_nevjeste }} </b></span></td>
+</tr>
+<tr>
+  <td align=center valign=center height="50%" style="font-size:12px;border:solid 1px black;">
+      <span face="Times New Roman"> Majke<br>Amësia</span></td>
+  <td style="font-size:12px;border:solid 1px black;"><span face="Times New Roman"><b>{{ rezultat[0].ime_majke_mladozenje }} {{ rezultat[0].prezime_mladozenje }}  </b></span></td>
+  <td style="font-size:12px;border:solid 1px black;"><span face="Times New Roman"><b>{{ rezultat[0].ime_majke_nevjeste }}
+    {{ rezultat[0].prezime_nevjeste }} </b></span></td>
+</tr>
+<tr>
+  <td colspan="2"
+      style="padding-top:4px; padding-bottom:4px;border:solid 1px black; padding-right:2px;font-size:12px">
+      <span face="Times New Roman"> Izjava supružnika o njihovom<br> prezimenu - Deklarimi
+          i<BR> bashkëshortëve<br> për mbiemrin e tyre</span></td>
+  <td style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px; ">
+      <span face="Times New Roman"><b>{{ rezultat[0].novo_prezime_mladozenje }} </b></span></td>
+  <td style="padding-top:2px;border:solid 1px black; padding-bottom:2px;font-size:12px; ">
+      <span face="Times New Roman"><b>{{ rezultat[0].novo_prezime_nevjeste }} </b></span></td>
+</tr>
+<tr>
+  <td colspan="4" rowspan="2" height="100px"
+      style="vertical-align:top;border:solid 1px black; padding-top:2px; font-size:12px"><span
+          face="Times New Roman"> Naknadni upis i pribilješke/Regjistrime dhe shënime të
+      mëvonshme:</span><br>
+      <div align=left style="margin:0px;dispaly:inline;line-height:95%;font-size:12px;">
+          <table width="100%">
+              <tr>
+                  <td style='FONT: bold 12px TimesNewRoman' vAlign=top><span
+                          face="Times New Roman"></span></td>
+              </tr>
+          </table>
+      </div></td>
+</tr>
+
+  </table>
+<br><br>
+
+<table cellSpacing=4 cellPadding=3 width="93%" border=0>
+  <tr>
+    <td width="44%" align=left style="font-size:14px;"><span face="Times New Roman"><p
+            align=center style="float:left">Dana/Datë&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p align=center style="margin:0px;line-height:60%;font-size:14px;"><b><span
+                face="Times New Roman">{{ rezultat[0].datum_vjencanja | date: 'dd-MM-yyyy' }}</span></b><br> ___________________________</p></span></td>
+    <td width="10%" rowspan="2" align=center valign=center style="font-size:12px; "><span
+            face="Times New Roman">(M.P.)<br>(V.V.)</span></td>
+    <td width="44%" align=middle style="margin:0px;line-height:60%;font-size:12px;"><span
+            face="Times New Roman">{{ maticar.ime + " " + maticar.prezime }}</span></td>
+    </tr>
+    <tr>
+      <td width="40%" align=left style="font-size:14px; "><span face="Times New Roman"><p
+              align=center style="float:left">
+          U/Në&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <p align=center style="margin:0px;line-height:60%;font-size:14px;"><b><span
+                  face="Times New Roman">TUZIMA</span></b><br> ___________________________</p></span></td>
+      <td width="44%" align=middle style="padding-bottom:0px;font-size:14px;"><span
+              face="Times New Roman"><p align=center
+                                        style="margin:0px;line-height:60%;font-size:12px;">
+          _________________________________</p></span>
+          <p style=" font-size:10px;margin-top:8px;text-align:center;display:inline"><span
+                  face="Times New Roman">(potpis matičara)/(nënshkrimi i zyrtarit të Gjendjes
+              civile)</span></p></td>
+          </tr>
+</table>
+</div>
+<div ><br> <button [hidden] ="dugme==0" (click)="openPDF()">Export To PDF</button></div>
+
+<table width="100%">
+  <tr>
+      <td style='FONT: bold 12px arial' vAlign=top></td>
+  </tr>
+</table>
+</td>
+
+</tr>
+  </table>
+</div>
+
+

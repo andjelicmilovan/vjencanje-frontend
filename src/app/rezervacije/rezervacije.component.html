@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<form [formGroup]="unos">
+<input type="datetime-local" formControlName="termin" >
+<div style="width: 25%">
+  <label for="inputEmail4">Ime i prezime mladozenje</label>
+  <input type="email" class="form-control"  formControlName="mladozenja">
+</div>
+<div style="width: 25%">
+  <label for="inputEmail4">jmbg mladozenje</label>
+  <input type="email" class="form-control"  formControlName="jmbg_mladozenje">
+</div>
+<div style="width: 25%">
+  <label for="inputEmail4">Ime i prezime nevjeste</label>
+  <input type="email" class="form-control"  formControlName="nevjesta">
+</div>
+<div style="width: 25%">
+  <label for="inputEmail4">jmbg nevjeste</label>
+  <input type="email" class="form-control"  formControlName="jmbg_nevjeste">
+</div>
+<button type="submit" class="btn btn-primary" (click)="rezervisi()">Rezervisi</button>
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Termin</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Prezime</th>
+      <th scope="col">Izmjena</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of rezervacije">
+      <th>{{ o?.termin}}</th>
+      <td>{{ o?.mladozenja }}</td>
+      <td>{{ o?.nevjesta }}</td>
+      <td><button class="btn btn-primary"(click)="otkazi(o.id)" >Otkazi</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<form [formGroup]="unos">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Ime</label>
+    <input type="text" class="form-control"  aria-describedby="emailHelp" formControlName="ime">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Prezime</label>
+    <input type="text" class="form-control"  formControlName="prezime">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="dodaj()">Dodaj</button>
+</form>
+
+
+
+<div>
+  <h2><b>Aktivni odbornici</b></h2>
+  </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Prezime</th>
+      <th scope="col">Izmjena</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of odbornici">
+      <th>{{ o.id }}</th>
+      <td>{{ o.ime }}</td>
+      <td>{{ o.prezime }}</td>
+      <td><button class="btn btn-primary" (click)="deaktiviraj(o.id)">Deaktiviraj</button></td>
+    </tr>
+  </tbody>
+</table>
+
